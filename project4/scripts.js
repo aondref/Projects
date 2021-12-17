@@ -54,9 +54,31 @@ const menu = [
         category: 'dinner',
     },
 ];
-const categories = ['all', ... new Set (menu.map((item) => item.category))];
+const categories = ['all', ... new Set (menu.map((item) => item.category))]; //Set is a collection of unique values. Each value can only occur once in a set and a set can hold any value of any data type. new Set creates a new Set.
 
 const result = document.querySelector('#unique-values');
 result.innerHTML = categories.map((category) => {
     return `<button>${category}</button>`;
 }).join(' ');
+
+//Dynamic Object Keys
+let appState = 'loading';
+
+const app = {
+    [appState]:true
+}
+
+const state = {
+    loading: true,
+    name: '',
+    job: ''
+}
+
+function updateState(key, value) {
+    state[key] = value
+}
+
+updateState('name', 'john');
+updateState('job', 'infrastructure engineer');
+updateState('loading', 'false');
+console.log(state);
