@@ -1,0 +1,14 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "express js backend",
+  "main": "backend.js",
+  "scripts": {
+    "test": "Hello World!"
+  },
+  "author": "Aondre Franklin",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
