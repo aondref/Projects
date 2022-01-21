@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react/cjs/react.development';
 
 function AddUserForm({ addUser }) {
     const initialFormState = { id: null, fname: '', lname: '', email: ''}
@@ -9,6 +10,7 @@ function AddUserForm({ addUser }) {
 
         setUser({ ...user, [name]: value });
     }
+
     
     return (
         <form onSubmit={(event) => {

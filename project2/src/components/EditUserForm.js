@@ -7,6 +7,7 @@ function EditUserForm({ currentUser, updateUser, setEditing }) {
         const { name, value } = event.target;
 
         setUser({ ...user, [name]: value })
+        console.log({ ...user, [name]: value})
     }
 
     useEffect(() => {
