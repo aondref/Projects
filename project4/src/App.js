@@ -1,71 +1,50 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+
+
 
 function App() {
-  const [user, setUser] = useState(0);
-  const [money, setMoney] = useState(10000);
-  const [salary, setSalary] = useState(50000);
-  const [fund, setFund] = useState(1000000);
-  const [purchase, setPurchase] = useState('');
-  const [building, setBuilding] = useState([
-    {
-      id: 1,
-      name: 'building1',
-      price: 90000
-    },
-    {
-      id: 2,
-      name: 'building2',
-      price: 120000
-    },
-    {
-      id: 3,
-      name: 'building3',
-      price: 500000
-    },
-  ]);
-
-  function purchased(property) {
-    console.log(property.price)
-    money >= property.price ? setMoney(money - property.price) : setPurchase(`You can't afford this`);
+  const playerData = {
+    id: 1,
+    name: '',
+    age: 18,
+    education: '',
+    career: '',
+    salary: 0,
+    money: 0,
+    debt: 0,
   }
 
-  useEffect(() => {
-    console.log(`This works!! You clicked ${user} times`)
-  }, [user])
-
-  function endTurn() {
-    setMoney(money + salary);
-    setPurchase('')
-  }
+  const [player, setPlayer] = useState(playerData)
 
   return (
-    <div className="App">
-      {
-        user === 0 
-        ? <h1>Hello World! You haven't clicked yet.</h1> 
-        : ( user < 2
-          ? <h1>Hello World! You clicked {user} once.</h1> 
-          : <h1>Hello World! You clicked {user} times.</h1>
-        )
+    <div>
+      Hello World!
+      {player.name === '' 
+      ? <p>No player data</p> 
+      : <div>
+          <h2>{player.name}</h2>
+          <p>{player.education}</p>
+          <p>{player.salary}</p>
+          <p>{player.money}</p>
+      </div>
       }
-      <button onClick={() => setUser(user + 1)}>Click me</button>
-      <br />
-      <br />
-      <br />
-      <br />
 
-      <section>
-        <h2>My money: ${money}</h2>
-        <h2>The Fund: ${fund}</h2>
-        {building.map((build) => 
-          <div key={build.id}>
-            <h2>{build.name}</h2>
-            <h2>Price: ${build.price}</h2>
-            <button onClick={() => purchased(build)}>Purchase</button>
+      <form>
+        <div className="row">
+          <div className="col">
+            <label htmlFor='educationList' className='form-label'>Choose Education</label>
+            <input className='form-control' onSelect={(e) => e.target.value == '' ? null : console.log(e.target.value)} list='chooseEducation' id='educationList' placeholder='Type to search...' />
+            <datalist id='chooseEducation'>
+              <option value="High School">High School</option>
+              <option value="Trade School">Trade School</option>
+              <option value="Associate's Degree">Associate's Degree</option>
+              <option value="Bachelor's Degree">Bachelor's Degree</option>
+              <option value="Master's Degree">Master's Degree</option>
+              <option value="Graduate Degree">Graduate Degree</option>
+            </datalist>
           </div>
-        )}
-        <button onClick={endTurn}>End Turn</button> {purchase}
-      </section>
+        </div>
+      </form>
     </div>
   );
 }

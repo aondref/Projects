@@ -1,18 +1,21 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import DPortfolio from "./components/Portfolio/DPortfolio";
-import Portfolio from "./components/Portfolio/Portfolio";
-import SWEPortfolio from "./components/Portfolio/SWEPortfolio";
+import { Routes, Route } from "react-router-dom";
+import HomePage from './components/pages/HomePage';
+import AboutPage from './components/pages/about/AboutPage';
+import PortfolioPage from './components/pages/portfolio/PortfolioPage';
+import BlogPage from './components/pages/blog/BlogPage';
+import Navigation from './components/Navigation';
 
 function App() {
   return (
-    <Router>
+    <div>
+      <Navigation />
       <Routes>
-        <Route path="/Portfolio" element={<Portfolio />}>
-          <Route path="Portfolio/SWEPortfolio" element={<SWEPortfolio />} />
-          <Route path="Portfolio/3DPortfolio" element={<DPortfolio />} />
-        </Route>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/portfolio" element={<PortfolioPage />} />
+        <Route path="/blog" element={<BlogPage />} />
       </Routes>
-    </Router>
+    </div>
   );
 }
 
