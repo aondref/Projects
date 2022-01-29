@@ -7,7 +7,7 @@ import Navigation from './components/Navigation';
 
 function App() {
   return (
-    <div>
+    <div className="vh-100">
       <Navigation />
       <Routes>
         <Route path="/" element={<HomePage />} />
