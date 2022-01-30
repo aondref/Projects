@@ -8,7 +8,7 @@ function Navigation() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-          <ul className="navbar-nav">
+          <ul className="navbar-nav text-center">
             <li className="nav-item">
               <Link className="nav-link" to="/">Home</Link>
             </li>
