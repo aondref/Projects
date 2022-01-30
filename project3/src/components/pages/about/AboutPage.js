@@ -1,7 +1,10 @@
+import Bio from "./Bio";
+
 function AboutPage() {
   return (
-      <div>
+      <div style={{height: "94.27%"}}>
           About Page
+          <Bio />
       </div>
   )
 }
