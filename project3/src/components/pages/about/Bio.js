@@ -2,7 +2,7 @@ function Bio() {
   return (
       <div className="container px-1 mt-5">
           <div className="row gx-4">
-              <div className="col-sm-4">
+              <div className="col-sm-3">
                   <p className="p-3 border bg-light text-center">About Me</p>
               </div>
               <div className="col">
