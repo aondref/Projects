@@ -1,19 +1,28 @@
 import { Routes, Route } from "react-router-dom";
-import HomePage from './components/pages/HomePage';
-import AboutPage from './components/pages/about/AboutPage';
-import PortfolioPage from './components/pages/portfolio/PortfolioPage';
-import BlogPage from './components/pages/blog/BlogPage';
-import Navigation from './components/Navigation';
+import Home from './pages/home';
+import About from './pages/about';
+import Portfolio from './pages/portfolio';
+import Blog from './pages/blog';
+import Navigation from './components/navigation';
+import JourneySoFar from "./components/blogPosts/journey-so-far";
 
 function App() {
   return (
     <div className="vh-100">
       <Navigation />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/portfolio" element={<PortfolioPage />} />
-        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/posts/journey-so-far" element={<JourneySoFar />} />
+        <Route path="*" 
+          element={
+            <main style={{ padding: "1rem" }}>
+              <p>There's nothing here!</p>
+            </main>
+          } 
+        />
       </Routes>
     </div>
   );

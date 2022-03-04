@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Navigation() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+    <nav className="navbar navbar-expand-md navbar-light bg-light justify-content-center mb-5">
       <div className="container-fluid justify-content-center">
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
